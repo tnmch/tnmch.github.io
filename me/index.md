@@ -14,4 +14,4 @@ Here are some bug bounty websites :
   - [Hackerone](https://hackerone.com)
   - [Bugcrowd](https://bugcrowd.com)
   - [Yogosha](https://yogosha.com)
-  - [VULNERABILITY LAB](https://www.vulnerability-lab.com) (Binary Exploitation Course)
+  - [VULNERABILITY LAB](https://www.vulnerability-lab.com)
