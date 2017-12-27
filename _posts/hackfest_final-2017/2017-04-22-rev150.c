@@ -1,10 +1,4 @@
----
-layout: post
-title: Rev 75
-category: HackFest Final 2017
----
 
-```
 #we dont know about the update of values :(
 #include <stdio.h>
 #include <stdlib.h>
@@ -50,5 +44,3 @@ for ( i = 0LL; i <= 1193046; ++i )
     return 0;
 }
 
-
-```
