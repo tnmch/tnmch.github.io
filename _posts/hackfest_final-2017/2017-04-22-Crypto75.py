@@ -1,4 +1,12 @@
-#DATATECH fouad
+---
+layout: post
+title: Crypto 75
+category: HackFest Final 2017
+---
+
+
+```
+# fouad
 #!/usr/bin/env python2
 from pwn import *
 import binascii
@@ -30,3 +38,6 @@ for i in xrange(1, 32):
             break
 
 print flag1
+
+
+```
