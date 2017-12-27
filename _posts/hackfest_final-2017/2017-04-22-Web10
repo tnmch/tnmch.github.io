@@ -1,3 +1,11 @@
+---
+layout: post
+title: Web 10
+category: HackFest Final 2017
+---
+
+
+```
 <?php
 class Hackfest
 {
@@ -6,3 +14,6 @@ class Hackfest
 }
 print urlencode(serialize(new Hackfest));
 ?>
+
+
+```
