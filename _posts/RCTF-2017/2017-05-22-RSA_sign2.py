@@ -1,4 +1,13 @@
-                            ###########get N,e,and key length########
+---
+layout: post
+title: RSA sign2
+category: RCTF 2017
+---
+
+
+```
+
+                                  ###########get N,e,and key length########
 #using openssl like always give error so i switched to ruby to get N and E 
 #E is == 3 (CVE-2016-1494)
 
@@ -66,3 +75,4 @@ r.send(exploit)
 print r.recv(1024)
 
 #RCTF{perfect_si9_i_can_nerver_Do_b3tter}
+```
