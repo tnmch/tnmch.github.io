@@ -1,3 +1,9 @@
+---
+layout: post
+title: Dtune_Misc
+category: BackdoorCTF  2016
+---
+
 Hi
 
 today i will explain how i solve a task in backdoorctf 
