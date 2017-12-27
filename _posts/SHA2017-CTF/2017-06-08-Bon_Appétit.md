@@ -1,3 +1,9 @@
+---
+layout: post
+title: Bon_Appétit
+category: SHA2017 CTF
+---
+
 Hello all  , after reading some write up , i notice that 90% of players solved this challenge with the simple and easy way 
 
 using .htaccess file to find the flag file name and then read it using LFI was really easy and fast 
