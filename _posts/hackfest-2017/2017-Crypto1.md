@@ -1,3 +1,12 @@
+---
+layout: post
+title: Crypto 1
+category: HackFest 2017
+---
+
+
+```
+
 def swap(s):
 	s = list(s)
 	for c in range(0,len(s),4):
@@ -34,3 +43,5 @@ flag =  xored.encode()
 #hex to string
 flag = ''.join(chr(int(flag[i:i+2], 16)) for i in range(0, len(flag), 2))
 print "flag is : ",flag
+
+```
