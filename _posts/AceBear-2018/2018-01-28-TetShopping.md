@@ -56,7 +56,7 @@ As we have `vsprintf`, we can send %c and convert any ASCII code to char
 %c - The character according to the ASCII value
 `
 
-means if our unsername : %1$c it will put ASCII code in our query but converted to char 
+means if our username : %1$c it will put ASCII code in our query but converted to char 
 
 `
 39 = > '
