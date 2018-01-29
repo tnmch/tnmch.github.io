@@ -48,7 +48,7 @@ $prepare_qr = $jdb->addParameter($prepare_qr.' and user=%s', $username);
 $result = $jdb->fetch_assoc($prepare_qr);
 `
 
-means here if we manipulate something how we can inject quote without make the filter remove it 
+means here if we manipulate it we can inject quote without make the filter remove it 
 
 As we have `vsprintf`, we can send %c and convert any ASCII code to char 
 
