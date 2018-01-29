@@ -1,3 +1,10 @@
+---
+layout: post
+title: Url Parameter
+category: AceBear 2018
+---
+
+
 
 Hello guys, just wake up after 48h of fighting, i will try to make write up for all web task as its all cleaned Here :D
 
