@@ -44,7 +44,7 @@ so here make me stuck here
 but my friend mention something that maked this almost done 'encode'
 As here the filter work on ```$_SERVER["REQUEST_URI"]``` and the in final step we have ```$_GET``` so if we encode our data it end decoded in   ```each($_GET); ``` but not in ```$_SERVER["REQUEST_URI"]```
 
-So the plan is clear here, encode our data to bypass filter and run any function :D
+So the plan is clear here, encode our data to bypass filter and call any function :D
 
 ![image](https://user-images.githubusercontent.com/7364615/35493904-ffb66d3c-04b6-11e8-8c82-25acb5c3c60b.png)
 
