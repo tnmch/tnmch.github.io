@@ -10,18 +10,15 @@ Hello guys, just wake up after 48h of fighting, i will try to make write up for 
 
 So lets start with this easy task (at least look easy for me  :p) 
 
-First look at robots.txt give us some hint : 
-`
-http://35.196.45.11:8080/robots.txt
-`
+First look at robots.txt give us some hint : `http://35.196.45.11:8080/robots.txt`
 
 give us :
 
-`
+```
 # you know de wae ma queen
 User-Agent: *
 Disallow: /?debug
-`
+```
 
 then check 
 
