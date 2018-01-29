@@ -39,7 +39,7 @@ if(count($_GET) > 0){
 
 almost here all function that can be used filtred (open & read & _ ) will filter also many other function
 
-so here make me stuck here
+so here make me stuck !
 
 but my friend mention something that maked this almost done 'encode'
 As here the filter work on ```$_SERVER["REQUEST_URI"]``` and the in final step we have ```$_GET``` so if we encode our data it end decoded in   ```each($_GET); ``` but not in ```$_SERVER["REQUEST_URI"]```
