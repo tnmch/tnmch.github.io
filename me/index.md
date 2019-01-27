@@ -4,7 +4,7 @@ layout: about
 
 My name is Mohamed CHAMLI . software engineer.
 
-I love CTFs, I do almost every online CTF available on [ctftime.org](http://ctftime.org). My main focus is on web application security for the CTF team [HackXore](https://ctftime.org/team/19216) in Online CTF & [DATATECH](https://ctftime.org/team/15663) in Local CTF.
+I love CTFs, I do almost every online CTF available on [ctftime.org](http://ctftime.org). My main focus is on web application security for the CTF team [DCUA](https://ctftime.org/team/762) in Online CTF.
 
 When I'm not doing CTFs, I usually work on bug bounties programs. I also post writeups for
 challenges from time to time.
