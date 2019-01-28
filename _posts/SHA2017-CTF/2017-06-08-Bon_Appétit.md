@@ -21,7 +21,7 @@ so here you can read all what you need to deal with this challenge
 
 the easy way is that you find the .htaccess file and then read the flag using the name mention in this file 
 
-as we dont check this file we did my own solution and as i thin its the goal of this task
+as we dont check this file we did my own solution and as i think its the goal of this task
 
 when you read the source of home page we see text : 
 
