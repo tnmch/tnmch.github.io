@@ -6,15 +6,15 @@ category: FireShell 2019
 
 Hello guys , i would like to share with you my solution for this web task 
 
-So this task based on 3 parts (LFI->XXE->RCE) each part will allow us to move to the next stage until we get the FLAG
+So this task's solution contains 3 parts (LFI->XXE->RCE) each part will allow us to move to the next stage until we get the FLAG
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/7364615/51808143-62d0d900-2290-11e9-8aad-448c7c976a17.png"></p>
 
-By accessing to the task url we can see menu with some actions 
+By accessing to the task url, we can see a menu with some actions
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/7364615/51808175-b7745400-2290-11e9-9b71-3af24350703d.png"></p>
 
-When we look at the html source code we can notice link to download this files 
+When we look at the html source codem we can notice a link used to download this files
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/7364615/51808189-e8548900-2290-11e9-9368-dd439db8a359.png"></p>
 
@@ -27,17 +27,17 @@ http://68.183.31.62:94/download?file=files/1.jpg&hash=7e2becd243552b441738ebc6f2
 2-hash : for now its md5 hash (we do not know how this hash generated )
 ```
 
-By doing some recon stuff and trying to get more informations about this task , nothing look important for us (only download link )
+By doing some recon stuff in order to get more informations about this task, I found out that nothing is important for us (except the download link)
 
 I tried to exploit it using hash length attack but no chance (not part of this challenge)
 
-Then notice that :
+Then I noticed this:
 
 ```
-md5($_GET('hash')) == $_GET('file')
+$_GET('hash') == md5($_GET('file'))
 ```
 
-which means for now we can load any file we want ( if we know location of course ) **PART1**
+which means for now we can load any file we want (if we know the location of course) **PART1**
 
 As there is 2 files on the web app , we tried to check the second one 
 
@@ -47,31 +47,31 @@ Download this file we got this
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/7364615/51808272-15ee0200-2292-11e9-9956-e62fa534ef81.png"></p>
 
-Ok look like there is something for us 
+Ok looks like there is something for us here
 
 `
 <b>Notice</b>:  Undefined variable: type in <b>/app/Controllers/Download.php</b> on line <b>21</b><br />
 `
 
-Using first part we can read this file
+Using the first part we can read this file
 
 ![download_lfi](https://user-images.githubusercontent.com/7364615/51808298-67968c80-2292-11e9-9b30-8ebcdd05b85e.png)
 
-Here we can now its the file used to download in part1
+Here we know its the file used to download in part1
 
-By digging more we start read more files , moving to index.php file 
+By digging more I managed read more files, the content of index.php is as follow:
 
 ![index](https://user-images.githubusercontent.com/7364615/51808648-daa20200-2296-11e9-977c-4ac60cac2cb9.png)
 
 We know for now that we have many other folders (Controllers / Views / Classes / files)
 
-But also there is file named "Routes.php" in index.php that can help us to move on
+But also there is a file named “Routes.php” referenced in index.php that can help us to move on
 
-By reading this file we find all routes and also what we need to do next (stage 2 )
+By reading this file we found all routes and also what we need to do next (stage 2)
 
 ![routes_xxe_rce_admin](https://user-images.githubusercontent.com/7364615/51808356-1d61db00-2293-11e9-816b-70ff45f0f558.png)
 
-The two important part : (/custom & /admin) , lets read them (Custom.php & Admin.php )
+The two important parts (**/custom** & **/admi**n), lets read them (Custom.php & Admin.php )
 
 ![custom_xxe](https://user-images.githubusercontent.com/7364615/51808369-4bdfb600-2293-11e9-95d0-f919afd1edd1.png)
 
