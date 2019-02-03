@@ -293,6 +293,6 @@ Really was nice task, different steps to finish it and the last step was really 
 
 BTW this task was only solved by 4 teams , happy that our team is part of this : )
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/7364615/52182555-8bac1d80-27fe-11e9-985e-049a8b642cec.png></p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/7364615/52182555-8bac1d80-27fe-11e9-985e-049a8b642cec.png"></p>
   
 Thanks to the creators’s team for this CTF also for hosting this competition and Thank you for reading this write up too :D
