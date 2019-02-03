@@ -31,7 +31,7 @@ Lets see what we can do here
 
 By the time we know that there should be something missing in their code that can break all this application :)
 
-What can be done at the moment, we can bypass the verification of downloaded images by simply adding the image header (jpg / gif ..) and put what we want (php code), but we still can not control file extension that does not cut us result
+What can be done at the moment, we can bypass the verification of downloaded images by simply adding the image header (jpg / gif ..) and put what we want (php code), but we still can not control file extension that does not give us any result
 
 So, if we add "GIF89a;" at the top of any file and the content is php code we get our downloaded file
 
