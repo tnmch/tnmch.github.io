@@ -121,7 +121,7 @@ And in getmime.php there was **MainClass** which call **httpGet($url)** that mea
 
 And yes we have our famous SSRF attack **ON** guys!
 
-Lets the pwn itw, but wait we need a valid phar file, that means we have to hide the phar as an image :)
+Lets the pwn it now, but wait we need a valid phar file, that means we have to hide the phar as an image :)
 ```
 <?php
 $jpeg_header_size =
