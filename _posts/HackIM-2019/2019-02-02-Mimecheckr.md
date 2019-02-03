@@ -229,7 +229,7 @@ We need to brute force all possible charset and get the result , we get some cle
 
 Its look like **Hello /fetch~'string-garbage' me**
 
-So until here we need just to try using one of this result (ecode garbage stuff) and send SSRF request again 
+So until here we need just to try using one of this result (encode garbage stuff) and send SSRF request again 
 
 lets try with CP1047 **Hello /fetch~%[]^@)(  me**, urlencode this **/%66%65%74%63%68%7e%25%5b%5d%5e%40%29%28** (else we get Bad request from server)
 
