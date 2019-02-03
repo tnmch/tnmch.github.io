@@ -199,6 +199,8 @@ rename("test.phar","fake_iamge.jpg");
 ?>
 ```
 
+Mime check post data : **phar://uploads/file_name.jpeg**
+
 Give us back the same web app
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/7364615/52182117-0aeb2280-27fa-11e9-84c3-525894f28f23.png"></p>
