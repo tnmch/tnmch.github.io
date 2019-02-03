@@ -267,10 +267,6 @@ And yes we got last one :)
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/7364615/52182462-be094b00-27fd-11e9-8968-702828f91051.png"></p>
 
-```
-File is not an image. http://172.17.0.2b'\xc8\x85\x93\x93\x96@a\x86\x85\xa3\x83\x88\xa1l\xad\xbd_|]M@@\x94\x85'
-```
-
 
 ```
 File is not an image. http://172.17.0.2/%66%65%74%63%68%7e%25%5b%5d%5e%40%29%28b'\xc6\x93\x81\x87\xc0\xd7\xc8\xd7m\xe2\xa3\x99\x85\x81\x94\xa2m\x81\x99\x85m\xa3\xf0\xf0m\xd4\x81\x89\x95\xe2\xa3\x99\x85\x81\x94\xf0\xd0'
