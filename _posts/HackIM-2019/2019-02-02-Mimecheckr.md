@@ -95,7 +95,7 @@ getimagesize("phar://test.jpg");
 OK here we go !
 
 Nothing weird for now , as we can't control the httpGet we can't exploit SSRF there !
-But wait at BlackHat 2018 event , @_s_n_t & @orange_8361 present a technique for triggering an unserialize within a phar archive. (check here https://www.youtube.com/watch?v=PqsudKzs79c)
+But wait at BlackHat 2018 event , @_s_n_t & @orange_8361 present a technique for triggering an unserialize within a phar archive. (check here **https://www.youtube.com/watch?v=PqsudKzs79c**)
 
 So using his technique we can unserialization vulnerability possible even without **unserialize** :)
 
