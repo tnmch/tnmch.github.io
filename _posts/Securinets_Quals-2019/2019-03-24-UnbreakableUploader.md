@@ -123,6 +123,8 @@ DATABASE_URL=mysql://symfony_admin:Securinets_dB_P455W0Rd_369@127.0.0.1:3306/sym
 
 Trying to connect to database  "Connection error to database" , it was fake database name "symfony_task_3"
 
+Admin again :D 
+
 <p align="center"> <img src="https://user-images.githubusercontent.com/7364615/54945550-6ef6b100-4f36-11e9-87e5-bc66deda8804.jpeg"></p>
 
 Lets just dump user privileges database XD
