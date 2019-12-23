@@ -128,7 +128,7 @@ And yes, we just got IN guys :), let's check out what we can do with this pirate
 
 By sending this `http://3.19.111.121/?debug=1&upd=https://google.com` we get this output result
 
-<p align="center"><img src="https://user-images.githubusercontent.com/7364615/71366670-fa26d500-25a2-11ea-919e-ce1dd1b27cb8.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/7364615/71374217-344fa100-25ba-11ea-91a1-19e1173f3997.png"></p>
 
 Looks like we have SSRF `Server Side Request Forgery` here, but can we do it?
 
