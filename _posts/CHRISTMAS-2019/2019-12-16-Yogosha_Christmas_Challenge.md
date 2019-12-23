@@ -112,6 +112,8 @@ Let's start by debugging more, he just created a function called `Load_Hotfix` t
 
 ```
 
+<p align="center"><img src="https://user-images.githubusercontent.com/7364615/71374164-f5215000-25b9-11ea-8f9d-ff707d0b1a35.png"></p>
+
 This function only works if the user is logged in and the username is `noel` , it also checks the `debug` parameter if it is there, it will use another `upd` parameter and will call `Hotfix_update()` who will request specific URL!
 
 Wait, was this hacker just a lazy pirate ?? are you sure for real!
