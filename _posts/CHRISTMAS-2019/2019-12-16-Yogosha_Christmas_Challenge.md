@@ -26,7 +26,7 @@ Then you just have to read his tweet, one of them is to give a hint about the co
 
 <p align="center"><img src="https://user-images.githubusercontent.com/7364615/71361911-b3ca7980-2594-11ea-8f50-8361bf6d5417.png"></p>
 
-It's probably `cutt.ly/something` , well here you can just find the cracked result on a website like `https:// crackstation.net/` or just if we read his old tweet
+It's probably `cutt.ly/something` , well here you can just find the cracked result on a website like `https://crackstation.net/` or just if we read his old tweet
 
 <p align="center"><img src="https://user-images.githubusercontent.com/7364615/71362033-25a2c300-2595-11ea-85ae-9d7e5e79762b.png"></p>
 
