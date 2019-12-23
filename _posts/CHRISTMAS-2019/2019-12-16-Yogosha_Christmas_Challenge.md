@@ -154,7 +154,7 @@ We just know it should be an xpath injection, let's use it :)
 
 <p align="center"><img src="https://user-images.githubusercontent.com/7364615/71367944-ca79cc00-25a6-11ea-8c48-83bad6368968.png"></p>  
 
-Since we have the user / password, we can access this hacker website (we can also bypass it using a simple payload ` ' or 1 = 1 or '` ), but I like the hard way , it teaches a lot!
+Since we have the user / password, we can access this hacker website (we can also bypass it using a simple payload ` ' or 1=1 or ' ` ), but I like the hard way , it teaches a lot!
 
 So now we get a result, looks like the html output of the tree tool
 
