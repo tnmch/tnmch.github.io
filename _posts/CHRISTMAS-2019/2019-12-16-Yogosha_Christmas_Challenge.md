@@ -50,7 +50,7 @@ Looks like its 12 character password login service, if we are trying to brute fo
 
 So the best option is to try to think outside the box, the service text contain **very slow version**, so maybe it uses some functions that slow down password verification , for someone who is used to playing CTF or having love with crypto stuff, he will think about this type of attack that occurs almost everywhere **Side Channel Attack** https://en.wikipedia.org/wiki/Side-channel_attack
 
-One of this attack called **timing attack** , where you can guess if your input correct or not depend time it take each char you send comparing to others which is the case here !
+One of this attack called **timing attack** , where you can guess if your input correct or not depend on the time it take each char you send comparing to others which is the case here !
 
 If we debug a little the first time, then by writing a small script, we will get the password which is `pAsSwOrd159!`
 
