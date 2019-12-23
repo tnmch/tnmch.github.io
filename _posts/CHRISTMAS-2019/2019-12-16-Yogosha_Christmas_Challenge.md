@@ -56,7 +56,9 @@ If we debug a little the first time, then by writing a small script, we will get
 
 <p align="center"><img src="https://user-images.githubusercontent.com/7364615/71363508-ae236280-2599-11ea-907f-f70e8a06ff30.png"></p>
 
-If we access using this password, we will get information about active sessions, whenever it gives us different users, what we can do here is that we can disclose any users that we may have need in the future!
+If we access using this password, we will get information about active sessions, whenever it gives us different users, what we can do here is that we can leak all users that we may have need in the future!
+
+<p align="center"><img src="https://user-images.githubusercontent.com/7364615/71373943-31a07c00-25b9-11ea-9d00-7d2aa4da367f.png"></p>
 
 Then, if we go back now to the web application, we can find a simple page there without more information that lead us to another path.
 
