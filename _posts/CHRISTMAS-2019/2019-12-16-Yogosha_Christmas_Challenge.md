@@ -102,7 +102,7 @@ It is a function which uses another real wordpress function to make a call, does
 
 <p align="center"><img src="https://media.giphy.com/media/l2QDZFG1IXD4zbuRq/giphy.gif"></p>
 
-Let's start by debugging more, he just created a function called `Load_Hotfix` to confuse others with the real name and hide it from other hackers too, the function looks good but it has bad behavior .
+Let's start by debugging more, he just created a function called `Load_Hotfix` to confuse others with the real name ,look like he is trying to hide it, the function looks good but it has bad behavior .
 
 ```
 -               if ($user === "noel" && $_GET['debug'] === "1") {
