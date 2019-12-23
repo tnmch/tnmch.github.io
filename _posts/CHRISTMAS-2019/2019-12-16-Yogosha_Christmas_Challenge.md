@@ -73,7 +73,8 @@ We got useful information from the tool:
 ```
 http://3.19.111.121/wp-content/
 http://3.19.111.121/wp-login.php
-..
+....
+
 ```
 
 We can now get an idea of what type of web application it is, Wordpress for sure!
@@ -81,11 +82,11 @@ We can now get an idea of what type of web application it is, Wordpress for sure
 If we do some enumeration (manual or using the **wpscan** tool), we can get what plugins already installed
 
 ```
-1 -advanced-custom-fields
+1- advanced-custom-fields
 2- akismet
 ```
 
-Going to the ACF plugin, we find the zip file **ACF.zip**, so if we want to get more details, we can just compare this zip file with the original one `https: //www.advancedcustomfields.com/Downloads/`
+Going to the ACF plugin, we find the zip file **ACF.zip**, so if we want to get more details, we can just compare this zip file with the original one `https://www.advancedcustomfields.com/Downloads/`
 
 ```
 git diff ACF ACF_1
