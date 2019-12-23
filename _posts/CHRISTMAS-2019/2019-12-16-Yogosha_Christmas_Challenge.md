@@ -130,7 +130,7 @@ By sending this `http://3.19.111.121/?debug=1&upd=https://google.com` we get thi
 
 <p align="center"><img src="https://user-images.githubusercontent.com/7364615/71374217-344fa100-25ba-11ea-91a1-19e1173f3997.png"></p>
 
-Looks like we have SSRF `Server Side Request Forgery` here, but can we do it?
+Looks like we have SSRF `Server Side Request Forgery` here, but what we can do next?
 
 As we was crawling the website , we notice that `http://3.19.111.121/server-status` gives us forbidden page, what if we can access it from the inside? :)
 
