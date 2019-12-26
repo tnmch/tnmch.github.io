@@ -196,3 +196,7 @@ We just got the flag by reading `/etc/passwd`!
 <p align="center"><img src="https://user-images.githubusercontent.com/7364615/71369774-154a1280-25ac-11ea-953e-af87be6bb590.png"></p>
 
 `Yogosha{4t_christma5_all_r0ads_Le4d_hOme}`
+
+See you , Hackers 
+
+<p align="center"><img src="https://user-images.githubusercontent.com/7364615/71467750-1fdef480-27c4-11ea-8ead-03758ca1a89b.png"></p> 
