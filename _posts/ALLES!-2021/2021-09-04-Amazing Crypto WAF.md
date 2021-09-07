@@ -4,7 +4,7 @@ title: Amazing Crypto WAF
 category: ALLES! CTF 2021
 ---
 
-So last week I was able to play for a few hours with my team, once [Super Gusser](https://ctftime.org/team/130817/),  I joined Discord and found that already half of the web challenge siced :smile: ,  I chose this challenge as a start and my teammate [sapra](https://twitter.com/0xsapra) also joined.
+So last week I was able to play for a few hours with my team, once [Super Gusser](https://ctftime.org/team/130817/),  I joined Discord and found that already half of the web challenge siced :D ,  I chose this challenge as a start and my teammate [sapra](https://twitter.com/0xsapra) also joined.
 
 <img style="zoom: 40%;" src="https://user-images.githubusercontent.com/7364615/132334574-a2d19944-8a0e-4c2f-b549-4335e6aa067a.png" alt="main" >
 
@@ -12,7 +12,7 @@ First the challenge was very simple, you can create an account / log in and you 
 
 <img style="zoom: 40%;" src="https://user-images.githubusercontent.com/7364615/132334741-9024bcb3-221b-4816-9ae2-af0cc5520123.png" alt="main" >
 
-Based on all of this and checking the source code which was a good hint for us rather than blindly trying to check all kinds of possible bugs :wink: .
+Based on all of this and checking the source code which was a good hint for us rather than blindly trying to check all kinds of possible bugs :) .
 
 Later, after reading the code and checking, `sapra` mentions that there is a possible SQL injection which was a time based SQLi in notes function..
 
