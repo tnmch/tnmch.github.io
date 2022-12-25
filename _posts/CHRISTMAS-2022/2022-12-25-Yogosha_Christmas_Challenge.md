@@ -29,7 +29,7 @@ FLAG{Welcome_T0-The_XmAs_Chall}
 
 # 2nd challenge: Secret Hideout
 
-This challenge is about haproxy `CVE-2021-40346): Integer Overflow Enables HTTP Smuggling`. The goal is to use the provided bash command to get the `/secret` route.
+This challenge is about haproxy `CVE-2021-40346 : Integer Overflow Enables HTTP Smuggling`. The goal is to use the provided bash command to get the `/secret` route.
 
 ## Steps
 
