@@ -18,7 +18,7 @@ The goal of this challenge is to read the flag secret file by pulling the image 
 2. Create a new directory called `layers` using the command `mkdir layers`.
 3. Extract the contents of the tar file into the new directory using the command `tar -C layers -xvf chall.tar`.
 4. Change into the new directory using the command `cd layers`.
-5. Run the command `ls -al SHA` to list the contents of the directory.
+5. Run the command `ls -al sha256-hash-folder` to list the contents of the directory.
 6. Change into the directory `sha256-hash-folder` using the command `cd sha256-hash-folder`.
 7. Extract the contents of the file `layer.tar` using the command `tar -xvf layer.tar`.
 8. Read the flag file using the command `cat data/secret_note.txt`.
