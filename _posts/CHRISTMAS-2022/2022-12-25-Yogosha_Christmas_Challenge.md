@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Yogosha Annual Christmas Challenge
-category: Yogosha CTF 2022
+title: Xmas
+category: YogoshaChristmasChallenge 2022
 ---
-
 
 ## Acknowledgements
 
