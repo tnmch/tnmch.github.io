@@ -14,12 +14,12 @@ The goal of this challenge is to read the flag secret file by pulling the image 
 
 ## Steps
 
-1. Run the command `docker save 81ef8c98117b > aa.tar` to save the image as a tar file.
+1. Run the command `docker save image_name > chall.tar` to save the image as a tar file.
 2. Create a new directory called `layers` using the command `mkdir layers`.
-3. Extract the contents of the tar file into the new directory using the command `tar -C layers -xvf aa.tar`.
+3. Extract the contents of the tar file into the new directory using the command `tar -C layers -xvf chall.tar`.
 4. Change into the new directory using the command `cd layers`.
-5. Run the command `ls -al 26ca41e311fdd9587039634cc34f9876d781fe386c05ff21fca606d6673ca6ee` to list the contents of the directory.
-6. Change into the directory `26ca41e311fdd9587039634cc34f9876d781fe386c05ff21fca606d6673ca6ee` using the command `cd 26ca41e311fdd9587039634cc34f9876d781fe386c05ff21fca606d6673ca6ee`.
+5. Run the command `ls -al SHA` to list the contents of the directory.
+6. Change into the directory `sha256-hash-folder` using the command `cd sha256-hash-folder`.
 7. Extract the contents of the file `layer.tar` using the command `tar -xvf layer.tar`.
 8. Read the flag file using the command `cat data/secret_note.txt`.
 
@@ -84,7 +84,7 @@ FLAG{K4ra_OnCe_Alw4y5_Kara????}
 
 The goal of this challenge is to use a firefox issue related to version "104" to bypass the base CSP when it is enforced using a meta tag.
 
-REF : `https://www.mozilla.org/en-US/security/advisories/mfsa2022-40/#CVE-2022-40956`
+REF : https://www.mozilla.org/en-US/security/advisories/mfsa2022-40/#CVE-2022-40956
 
 ## Steps
 
