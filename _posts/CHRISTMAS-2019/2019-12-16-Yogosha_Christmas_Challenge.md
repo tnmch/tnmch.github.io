@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HackBack
-category: YogoshaChristmasChallenge 2019
+category: Yogosha Christmas Challenge 2019
 ---
 
 Hello everyone, We at @Yogosha wanted to have fun with our community and hunters around the world, that's why we made for them 
