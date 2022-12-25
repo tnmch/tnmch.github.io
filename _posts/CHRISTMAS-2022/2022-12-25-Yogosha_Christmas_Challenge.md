@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Xmas
-category: YogoshaChristmasChallenge 2022
+category: Yogosha Christmas Challenge 2022
 ---
 
 ## Acknowledgements
